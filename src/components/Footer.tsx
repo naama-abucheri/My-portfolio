@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-foreground text-background py-16">
+  return <footer className="bg-foreground text-background py-16">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
@@ -19,20 +17,16 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-primary">Quick Links</h4>
             <div className="space-y-2">
-              {["About", "Projects", "Skills", "Education", "Contact"].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => {
-                    const element = document.getElementById(item.toLowerCase());
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  className="block text-background/80 hover:text-primary transition-colors"
-                >
+              {["About", "Projects", "Skills", "Education", "Contact"].map(item => <button key={item} onClick={() => {
+              const element = document.getElementById(item.toLowerCase());
+              if (element) {
+                element.scrollIntoView({
+                  behavior: "smooth"
+                });
+              }
+            }} className="block text-background/80 hover:text-primary transition-colors">
                   {item}
-                </button>
-              ))}
+                </button>)}
             </div>
           </div>
 
@@ -40,17 +34,11 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-primary">Get In Touch</h4>
             <div className="space-y-3">
-              <a 
-                href="mailto:naamaabucheri@gmail.com"
-                className="flex items-center text-background/80 hover:text-primary transition-colors"
-              >
+              <a href="mailto:naamaabucheri@gmail.com" className="flex items-center text-background/80 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4 mr-2" />
                 naamaabucheri@gmail.com
               </a>
-              <a 
-                href="tel:0707438686"
-                className="flex items-center text-background/80 hover:text-primary transition-colors"
-              >
+              <a href="tel:0707438686" className="flex items-center text-background/80 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4 mr-2" />
                 0707 438 686
               </a>
@@ -59,9 +47,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-background/60 text-sm mb-4 md:mb-0">
-            © 2024 Naama Abucheri. All rights reserved.
-          </p>
+          <p className="text-background/60 text-sm mb-4 md:mb-0">© 2025 Naama Abucheri. All rights reserved.</p>
           <div className="flex space-x-4">
             <Button variant="outline" size="sm" asChild>
               <a href="mailto:naamaabucheri@gmail.com" className="border-primary/20 text-background hover:bg-primary hover:text-primary-foreground">
@@ -76,8 +62,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
